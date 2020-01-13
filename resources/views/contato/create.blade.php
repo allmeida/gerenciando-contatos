@@ -8,13 +8,22 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
+<div class="container">
+    <br>
     <h1>Novo Contato</h1>
 
-    <form method="post">
-        @csrf
-        <input class="form-control" type="text" name="nome" >
-        <input class="form-control" type="text" name="telefone" >
-        <button class="btn btn-primary" type="submit">Cadastrar</button>
-    </form>
+        <form action="/contatos" method="post">
+            @csrf
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input class="form-control" type="text" name="nome" >
+            </div>
+            <div class="form-group">
+                <label for="nome">Telefone</label>
+                <input class="form-control" type="text" name="telefone" >
+            </div>
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </form>
+</div>
 </body>
 </html>

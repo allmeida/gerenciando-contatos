@@ -44,6 +44,7 @@ Route::get('/contatos', 'ContatoController@listarContatos');
 Route::get('contatos', 'ContatoController@index');
 
 Route::get('contatos/create', 'ContatoController@create');
-Route::post('contatos/create', 'ContatoController@store');
+Route::post('contatos', 'ContatoController@store');
 
 Route::get('contatos/{id}', 'ContatoController@edit');
+//Route::get('contatos/{id}/delete', 'ContatoController@destroy');

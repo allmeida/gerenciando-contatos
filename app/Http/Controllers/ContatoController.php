@@ -21,14 +21,17 @@ class ContatoController extends Controller
     }
     */
 
-    public function index(){
+    public function index()
+    {
         $contatos = Contato::all();
         //dd($contatos);
         return view('contato.index', compact('contatos'));
     }
 
-    public function create(){
+    public function create()
+    {
         return view('contato.create');
+
     }
 
     public function store(Request $request)
@@ -43,13 +46,31 @@ class ContatoController extends Controller
         */
 
         Contato::create($request->all());
+        return redirect('contatos');
     }
 
     public function edit($id)
     {
         //dd($id);
         $contato = Contato::find($id);
+        //dd($contato->nome);
 
-        dd($contato->nome);
+        //return view('contato.edit', compact('contatos'));
+        return view('contato.edit')->with(['contato' => $contato]);
+
     }
+
+    public function update(Request $request, $id)
+    {
+        $contato = Contato::find($id)->update($request->all());
+        return redirect('contato.index');
+    }
+/*
+    public function destroy($id)
+    {
+        $contatos = Contato::find($id)->delete();
+
+        return view('contato.index');
+    }
+*/
 }

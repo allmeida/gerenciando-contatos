@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
+
+<div class="container">
+    <br>
     <h1>Lista de Contatos</h1>
     <a href="/contatos/create" class="btn btn-success">Cadastrar Novo</a>
 <hr>
@@ -31,6 +34,6 @@
         </tr>
         @endforeach
     </table>
-
+</div>
 </body>
 </html>
